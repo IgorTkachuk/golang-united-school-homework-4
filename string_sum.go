@@ -34,7 +34,7 @@ func StringSum(input string) (output string, err error) {
 	}
 
 	if len(clearInput) == 0 {
-		return "", errorEmptyInput
+		return "", fmt.Errorf("%w", errorEmptyInput)
 	}
 
 	operands := []string{""}
@@ -49,7 +49,7 @@ func StringSum(input string) (output string, err error) {
 	}
 
 	if len(operands) != 2 {
-		return "", errorNotTwoOperands
+		return "", fmt.Errorf("%w", errorNotTwoOperands)
 	}
 
 	var sum int64 = 0
